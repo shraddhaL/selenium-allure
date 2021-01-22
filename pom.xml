@@ -110,7 +110,26 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
+		 <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                    <reportDirectory>allure-report/</reportDirectory>
+                </configuration>
             </plugin>
+		<plugin>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-maven-plugin</artifactId>
+            <version>${alluremaven.version}</version>
+            <configuration>
+                <resultsDirectory>${allure.results.directory}</resultsDirectory>
+                <inputDirectories>${allure.results.directory}</inputDirectories>
+                <reportDirectory>${allure.report.directory}</reportDirectory>
+                <reportingOutputDirectory>${allure.report.directory}</reportingOutputDirectory>
+                <failReportIfEmpty>false</failReportIfEmpty>
+            </configuration>
+        </plugin>
+		
+		
         </plugins>
     </reporting>
 </project>
