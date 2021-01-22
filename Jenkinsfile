@@ -69,9 +69,9 @@ pipeline {
             steps {
                 script {
 			bat 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
-			bat 'allure generate target\allure-results --clean'
-			bat 'allure open target\allure-report\'
-			bat 'allure serve C:\Users\Dilip\.jenkins\workspace\seleniumAssi3-local-allure\target\surefire-reports\'
+			bat 'allure generate target/allure-results --clean'
+			bat 'allure open target/allure-report/'
+			bat 'allure serve C:/Users\Dilip/.jenkins/workspace/seleniumAssi3-local-allure/target/surefire-reports/'
 			 bat 'mvn allure:serve'
 		  	 bat 'mvn allure:report'
                 }
