@@ -21,11 +21,6 @@
             <version>1.18.12</version>
             <scope>test</scope>
         </dependency>
-	<dependency>
-		<groupId>ru.yandex.qatools.allure</groupId>
-		<artifactId>allure-testng-adaptor</artifactId>
-		<version>1.5.4</version>
-	</dependency>
 	</dependencies>
 	<build>
 	    <finalName>container-test</finalName>
@@ -80,61 +75,6 @@
         				<testFailureIgnore>true</testFailureIgnore>
     				</configuration>
 			</plugin>
-			<plugin>
-    				<groupId>io.qameta.allure</groupId>
-    				<artifactId>allure-maven</artifactId>
-    				<version>2.8</version>
-    				<configuration>
-        				<reportVersion>2.3.1</reportVersion>
-    				</configuration>
-			</plugin>
-			
-			  <!--Allure reporting config in parent-->
-			<plugin>
-                		<groupId>org.apache.maven.plugins</groupId>
-                		<artifactId>maven-surefire-plugin</artifactId>
-               			<version>${allure.maven}</version>
-            		</plugin>
-            		<plugin>
-                		<groupId>io.qameta.allure</groupId>
-                		<artifactId>allure-maven</artifactId>
-                		<version>${allure.maven}</version>
-                		<configuration>
-                    			<properties>
-                        			<allure.results.directory>target/allure-results</allure.results.directory>
-                    			</properties>
-                		</configuration>
-            		</plugin>
 		</plugins>
 	</build>
-	
-	 <!-- Allure reporting config in parent-->
-    <reporting>
-        <excludeDefaults>true</excludeDefaults>
-        <plugins>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-		 <version>2.10.0</version>
-                <configuration>
-                    <reportVersion>${allure.version}</reportVersion>
-                    <reportDirectory>allure-report/</reportDirectory>
-                </configuration>
-            </plugin>
-		<plugin>
-            <groupId>ru.yandex.qatools.allure</groupId>
-            <artifactId>allure-maven-plugin</artifactId>
-            <version>${alluremaven.version}</version>
-            <configuration>
-                <resultsDirectory>${allure.results.directory}</resultsDirectory>
-                <inputDirectories>${allure.results.directory}</inputDirectories>
-                <reportDirectory>${allure.report.directory}</reportDirectory>
-                <reportingOutputDirectory>${allure.report.directory}</reportingOutputDirectory>
-                <failReportIfEmpty>false</failReportIfEmpty>
-            </configuration>
-        </plugin>
-		
-		
-        </plugins>
-    </reporting>
 </project>
