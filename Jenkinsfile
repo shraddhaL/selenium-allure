@@ -67,6 +67,8 @@ pipeline {
             steps {
                 script {
 			bat 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
+			bat 'allure generate target/allure-results --clean'
+			bat 'allure open target/allure-report/'
 			 bat 'mvn allure:serve'
 		  	 bat 'mvn allure:report'
                 }
