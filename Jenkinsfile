@@ -3,7 +3,6 @@ pipeline {
 	 tools {
         maven 'maven3.6' 
 	jdk 'jdk1.8'
-	allure 'allure'
 	allure 'allure2'
     }
 	 environment {
