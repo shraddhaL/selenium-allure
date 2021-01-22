@@ -67,6 +67,8 @@ pipeline {
             steps {
                 script {
 			bat 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
+			 bat 'mvn allure:serve'
+		  	 bat 'mvn allure:report'
                 }
 	    }
         }    
@@ -95,6 +97,8 @@ pipeline {
 post {
           always {
             script {
+		    
+		  
               allure([
                 includeProperties: false,
                 jdk: '',
