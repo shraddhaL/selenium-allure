@@ -104,7 +104,7 @@ post {
               allure([
                 includeProperties: false,
                 jdk: '',
-		      properties: [[key: 'allure.results.directory', value: 'target/allure-results']],
+		      properties: [[key: 'allure.results.directory', value: '**/target/allure-results']],
                 reportBuildPolicy: 'ALWAYS',
                 results: [[path: 'target/allure-results']]
               ])
