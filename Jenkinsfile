@@ -71,14 +71,14 @@ pipeline {
 	    }
         }    
 	    
-	    stage('Create Report') {
+	  /*   stage('Create Report') {
 		    steps {
                 script {
         // Generate Allure Report
 			
         allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
 		}}}
-	   /* */ 
+	   */ 
 	 /*   stage('Execute') {
 		 steps {
                 script {
@@ -92,7 +92,7 @@ pipeline {
 	    
 	     */
 }  
-/*post {
+post {
           always {
             script {
               allure([
@@ -104,5 +104,5 @@ pipeline {
               ])
             }
           }
-        }	*/
+        }	
 }
